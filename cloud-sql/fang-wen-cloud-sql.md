@@ -10,11 +10,11 @@ description: 通过混合网络访问Cloud SQL, MemoryStore或FilestoreSQL
 
 当您在 GCP 上创建数据库或 nas 实例（Cloud SQL、Filestore 或 MemoryStore）时，通过 VPC Network Peering 在您的 VPC 网络和您的数据库或 Filestore 实例所在的底层 Google Cloud VPC 网络之间实现私有连接。
 
-<figure><img src="../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 远程（本地或其他云服务）网络与 GCP 客户 VPC 网络之间的 VPN 或互连隧道与数据库或 Filestore 底层 VPC 网络对等，可以提供与远程客户端的连接以访问云数据库或 Filestore 实例。
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
 
@@ -26,31 +26,31 @@ description: 通过混合网络访问Cloud SQL, MemoryStore或FilestoreSQL
 
 
 
-    <figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
     b. 您可以选择现有的 IP 范围或创建一个不重叠的新 IP 范围，或选择自动分配的 IP 范围
 
-<figure><img src="../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;       c. 创建连接   &#x20;
 
-<figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;       d. 将设置私有服务连接，对等连接客户 VPC 和 VPC 底层的 Cloud SQL
 
-<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
 2. 源 IP 必须在 RFC 1918 IP 范围内，或按照本[指南](https://g3doc.corp.google.com/company/gfw/support/cloud/playbooks/network/non-rfc-1918.md?cl=head)添加例外；
 3. 对于Filestore，远程客户端IP不能在172.17.0.0/16范围内；
 4. 如果 VPN 网关和 Cloud Router 与与云数据库 VPC 对等的 Customer VPC 不在同一区域，则需要在 VPC 配置中的“动态路由模式”下选择“全局”。
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 ## 示例环境信息 <a href="#_n99xbqjxchsd" id="_n99xbqjxchsd"></a>
 
 示例环境的网络信息如下图所示，您可以新建一个GCP VPC作为远程网络进行测试：
 
-<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
 
 云服务：文件存储
 
@@ -71,11 +71,11 @@ Cloud VPN网关IP：34.134.21.159
 1. 在远程网络和 GCP VPC 网络之间建立 VPN 或 Interconnect 连接，请参阅[Cloud VPN](https://cloud.google.com/network-connectivity/docs/vpn/how-to)和[Cloud Interconnect ](https://cloud.google.com/network-connectivity/docs/interconnect/how-to#managing-dedicated-interconnect)。支持 HA VPN 和 Classic VPN；
 2. 在客户 VPC 与 Cloud 数据库或 Filestore 底层 VPC 之间的相应网络对等中启用“导出自定义路由”。例如，filestore-peer-xxxxxxx 是 Customer VPC 和 VPC 下的 Filestore 实例之间的默认网络对等；
 
-<figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 3.  对于静态路由隧道（基于路由或基于策略的 VPN），执行以下操作：
 
@@ -85,39 +85,39 @@ Cloud VPN网关IP：34.134.21.159
 
     ：
 
-    <figure><img src="../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;      b. 将 Cloud 数据库或 Filestore 实例 IP 范围 (10.169.244.200/29) 添加到远程 VPN 设备的路由表中。例如，AWS VPN 连接静态路由
 
-<figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
 
 4.  对于动态路由隧道（BGP VPN 或互连），执行以下操作：
 
     a. 将 Cloud 数据库或 Filestore IP 范围添加到 Cloud Router 配置中的自定义 IP 范围
 
-<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;       b. 将 Cloud 数据库或 Filestore IP 范围添加到 BGP 会话配置中的自定义范围
 
-<figure><img src="../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
 
 &#x20;         c. 在步骤 4.a 和 4.b 之后，应将 Cloud 数据库或 Filestore IP 范围的动态路由通告到远程网络路由表。确认路由存在于远程网络路由表中
 
-<figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
 5. 确认网络对等配置下的导出路由中存在远程网络 IP 范围
 
-<figure><img src="../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
 6. 确认客户 VPC 路由表中存在远程网络 IP 范围
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
 
@@ -132,13 +132,13 @@ Cloud VPN网关IP：34.134.21.159
 
 &#x20;
 
-<figure><img src="../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
 ### Cloud SQL <a href="#_6i3s9dffhoys" id="_6i3s9dffhoys"></a>
 
 1. 在私有 IP 部分下选择客户 VPC 作为网络后，不需要防火墙规则和授权网络
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
 
@@ -146,7 +146,7 @@ Cloud VPN网关IP：34.134.21.159
 
 1. 在授权 VPC 网络部分下选择客户 VPC 后，不需要防火墙规则和授权网络
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
 ## 参考 <a href="#_t0ieiloucrxc" id="_t0ieiloucrxc"></a>
 

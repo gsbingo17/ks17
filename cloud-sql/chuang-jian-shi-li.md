@@ -10,7 +10,7 @@
 
 IOPS的大小是和磁盘的类型和大小相关的；同时，越大的实例类型，IOPS的上限越大。所以，当你需要高的IOPS的时候，请选择尽量大的实例类型以及SSD磁盘和更大的存储容量。最简单的验证办法是，你可以在Console创建实例时直接配置，并直观的看到IOPS的配置情况。
 
-![](<../.gitbook/assets/image (38).png>)
+![](<../.gitbook/assets/image (13).png>)
 
 ### 创建实例可以指定使用Public IP和Private IP吗？
 
