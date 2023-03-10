@@ -20,4 +20,6 @@ Redis内存也有出现碎片的情形，造成看上去内存使用率不高，
 
 还是以上面的例子来聊，16GB的Instance的系统内存有21.52GB，正常情况下，内存使用达到21.52GB的80%，请及时关注；在做Mainenance、导出操作、升配置等，尽量选择业务低峰期，内存使用控制在21.52GB的50%左右，这里主要是由于会涉及到RDB的数据备份，需要非常保守预留的内存完成RDB操作，但实际情况下，如果写入操作不多，内存使用控制在21.52GB的75%已经足够了。
 
-关于这个内存监控的指标，请使用[**system memory usage ratio**](https://cloud.google.com/memorystore/docs/redis/supported-monitoring-metrics)**,** 并设置相应告警。\
+关于这个内存监控的指标，请使用[**system memory usage ratio**](https://cloud.google.com/memorystore/docs/redis/supported-monitoring-metrics)**,** 并设置相应告警。
+
+### 我需要为 
