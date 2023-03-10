@@ -22,4 +22,8 @@ Redis内存也有出现碎片的情形，造成看上去内存使用率不高，
 
 关于这个内存监控的指标，请使用[**system memory usage ratio**](https://cloud.google.com/memorystore/docs/redis/supported-monitoring-metrics)**,** 并设置相应告警。
 
-### 我需要为 
+### 我需要为MemoryStore for Redis的标准版打开RDB吗？
+
+由于打开RDB会为Redis带来性能的额外开销，而标准版本身是一主一从的部署，实际上是提供了RDB可以带来的数据保护。所以，我们建议，标准版为了提供更好的性能，是不需要打开RDB的。
+
+当然，如果你说你一定需要打开RDB，标准版只会在从节点打开RDB，主节点是不会打开RDB的。这一点也是基于RDB对性能的影响的考虑。\
