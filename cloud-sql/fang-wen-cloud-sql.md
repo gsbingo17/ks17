@@ -85,7 +85,7 @@ Cloud VPN网关IP：34.134.21.159
 
     ：
 
-    <figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;      b. 将 Cloud 数据库或 Filestore 实例 IP 范围 (10.169.244.200/29) 添加到远程 VPN 设备的路由表中。例如，AWS VPN 连接静态路由
 
@@ -99,7 +99,7 @@ Cloud VPN网关IP：34.134.21.159
 
 &#x20;       b. 将 Cloud 数据库或 Filestore IP 范围添加到 BGP 会话配置中的自定义范围
 
-<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
 
@@ -109,7 +109,7 @@ Cloud VPN网关IP：34.134.21.159
 
 &#x20;         c. 在步骤 4.a 和 4.b 之后，应将 Cloud 数据库或 Filestore IP 范围的动态路由通告到远程网络路由表。确认路由存在于远程网络路由表中
 
-<figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 5. 确认网络对等配置下的导出路由中存在远程网络 IP 范围
 
@@ -132,7 +132,7 @@ Cloud VPN网关IP：34.134.21.159
 
 &#x20;
 
-<figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 ### Cloud SQL <a href="#_6i3s9dffhoys" id="_6i3s9dffhoys"></a>
 
