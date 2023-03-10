@@ -13,7 +13,7 @@
   * [创建实例](memorystore-for-redis/chuang-jian-shi-li.md)
   * [性能与监控](memorystore-for-redis/xing-neng-yu-jian-kong.md)
   * [Redis 实例缩容](memorystore-for-redis/redis-shi-li-suo-rong.md)
-  * [Maintenance 维护事件](memorystore-for-redis/maintenance-wei-hu-shi-jian.md)
+  * [Maintenance](memorystore-for-redis/maintenance-wei-hu-shi-jian.md)
 * [AlloyDB for PostgreSQL](alloydb-for-postgresql/README.md)
   * [创建实例](alloydb-for-postgresql/chuang-jian-shi-li.md)
   * [性能与监控](alloydb-for-postgresql/xing-neng-yu-jian-kong.md)
