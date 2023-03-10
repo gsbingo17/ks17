@@ -4,8 +4,10 @@ description: MySQL
 
 # MySQL
 
-* 若是在 Test migration Job 過程, 發現Error: **Failure connecting to the source database** \
-  ![](<../../.gitbook/assets/image (1).png>)
+### **Failure connecting to the source database**
+
+若是在 Test migration Job 過程, 發現Error: **Failure connecting to the source database** \
+![](<../../.gitbook/assets/image (1).png>)
 
 這樣代表無法從 CloudSQL端 連線到 來源資料庫主機.\
 **PrivateIP環境:** 進入跟 CloudSQL 做Peering的VPC後, 點選 Private Service Connection --> Allocated Ranges For Services\
