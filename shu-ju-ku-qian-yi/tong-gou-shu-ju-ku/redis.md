@@ -12,6 +12,6 @@ description: Redis
 
 * 在线实时方式
 
-通常通过[RIOT](https://github.com/redis-developer/riot)或者[Redis-shake](https://github.com/alibaba/RedisShake)等开源工具实现。这些开源工具可以支持使用源数据库Redis的psync或者scan+keyspace notificate来实现数据迁移。优先使用psync，如果源数据库Redis不支持；再选择使用scan+keyspace notification。
+通常通过[RIOT](https://github.com/redis-developer/riot)或者[Redis-shake](https://github.com/alibaba/RedisShake)等开源工具实现。这些开源工具可以支持使用源数据库Redis的psync或者scan+keyspace notificate来实现数据迁移。优先使用psync；如果源数据库Redis不支持psync，再选择使用scan+keyspace notification。
 
 具体的做法，可以参考上述开源工具的说明文档。
