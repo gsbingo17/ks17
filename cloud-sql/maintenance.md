@@ -17,3 +17,11 @@ description: Maintenance
 
 可以的。
 
+### 维护期间 Cloud SQL 实例连接丢失的时间
+
+* PostgreSQL - 30 seconds or less
+* MySQL - 60 seconds or less
+* SQL Server - 120 seconds or less
+
+
+
