@@ -27,6 +27,7 @@
     * [MySQL](shu-ju-ku-qian-yi/tong-gou-shu-ju-ku/mysql.md)
     * [PostgreSQL](shu-ju-ku-qian-yi/tong-gou-shu-ju-ku/postgresql.md)
     * [SQL Server](shu-ju-ku-qian-yi/tong-gou-shu-ju-ku/sql-server.md)
+    * [Redis](shu-ju-ku-qian-yi/tong-gou-shu-ju-ku/redis.md)
   * [异构数据库](shu-ju-ku-qian-yi/yi-gou-shu-ju-ku.md)
 * [Datastream](datastream/README.md)
   * [Destination](datastream/destination.md)

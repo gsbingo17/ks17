@@ -1,7 +1,3 @@
----
-description: MySQL
----
-
 # MySQL
 
 ### **Failure connecting to the source database**
