@@ -22,6 +22,8 @@
   * [性能与监控](cloud-spanner/xing-neng-yu-jian-kong.md)
 * [Cloud Bigtable](cloud-bigtable/README.md)
   * [创建实例](cloud-bigtable/chuang-jian-shi-li.md)
+  * [应用开发](cloud-bigtable/ying-yong-kai-fa.md)
+  * [性能与监控](cloud-bigtable/xing-neng-yu-jian-kong.md)
 * [数据库迁移](shu-ju-ku-qian-yi/README.md)
   * [同构数据库](shu-ju-ku-qian-yi/tong-gou-shu-ju-ku/README.md)
     * [MySQL](shu-ju-ku-qian-yi/tong-gou-shu-ju-ku/mysql.md)
