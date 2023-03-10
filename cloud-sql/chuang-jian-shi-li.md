@@ -53,6 +53,10 @@ gcloud sql instances patch INSTANCE_NAME \
 
 如果在结果中看到 "-async\_archive -remove\_storage"，则意味着 WAL 已经保存在 GCS 上。如果看不到该字段，则说明此台实例的 WAL 仍旧保留在实例自身的存储中。
 
+### 保存在 Google Cloud Storage (GCS) 的 WAL log 收否收费？
+
+在 GCS 上的 WAL log（最多可以保留 7 天）的费用，由 GCP 承担，不对用户产生费用。
+
 ### 修改Cloud SQL数据库实例的子网，怎么做呢？
 
 举个例子说明具体做法，例如在VPC的Private Service Connections有2个子网，如下图：
