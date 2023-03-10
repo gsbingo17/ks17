@@ -33,6 +33,7 @@
 * [MongoDB Atlas and Redis Ent](mongodb-atlas-and-redis-ent/README.md)
   * [MongoDB Atlas](mongodb-atlas-and-redis-ent/mongodb-atlas/README.md)
     * [MongoDB Atalas订阅模式](mongodb-atlas-and-redis-ent/mongodb-atlas/mongodb-atalas-ding-yue-mo-shi.md)
+    * [如何迁移到MongoDB Atlas](mongodb-atlas-and-redis-ent/mongodb-atlas/ru-he-qian-yi-dao-mongodb-atlas.md)
     * [MongoDB与BigQuery的同步](mongodb-atlas-and-redis-ent/mongodb-atlas/mongodb-yu-bigquery-de-tong-bu.md)
     * [MongoDB特性的选择](mongodb-atlas-and-redis-ent/mongodb-atlas/mongodb-te-xing-de-xuan-ze.md)
     * [MongoDB和Firestore的对比](mongodb-atlas-and-redis-ent/mongodb-atlas/mongodb-he-firestore-de-dui-bi.md)
