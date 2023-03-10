@@ -99,7 +99,7 @@ Cloud VPN网关IP：34.134.21.159
 
 &#x20;       b. 将 Cloud 数据库或 Filestore IP 范围添加到 BGP 会话配置中的自定义范围
 
-<figure><img src="../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
 
