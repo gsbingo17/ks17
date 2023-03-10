@@ -15,4 +15,4 @@ Memorystore for Redis export 使用 Redis 的 BGSAVE 功能对实例中的数据
 
 ### 解决方式
 
-使用标准版在启用Read Replica 的实例上，进行RDB 快照操作，避免影响 Primary node 实例性能。&#x20;
+使用标准版的MemoryStore，并启用RDB快照；快照绝不会来自主节点。快照也实现备份功能。
