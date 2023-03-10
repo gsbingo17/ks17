@@ -19,6 +19,10 @@ Spanner提供了两大类的读和写的客户端接口：
 1. SQL的[Query](https://cloud.google.com/spanner/docs/getting-started/java?hl=zh-cn#query\_data\_using\_sql)和[DML](https://cloud.google.com/spanner/docs/getting-started/java?hl=zh-cn#write-data)的接口，使用的方法和使用其他关系型数据库是一样；同时，也提供了Java JDBC的支持，正因为如此，也兼容常用的Java的ORM开源框架。
 2. Read和Mutation的接口，[Read](https://cloud.google.com/spanner/docs/getting-started/java?hl=zh-cn#read\_data\_using\_the\_read\_api)接口是用于读取数据，[Mutation](https://cloud.google.com/spanner/docs/getting-started/java?hl=zh-cn#write-data-with-mutations)接口是用于写入数据。Read和Mutation的接口是可以更好满足读写低延时的需求。使用这两个接口读写时，就类似于把Spanner当作一个NoSQL在使用。这也是Spanner融合了关系型数据库和NoSQL数据库在具体使用中的表现。
 
+### Spanner的事务机制有什么特点，写代码的时候有什么需要注意的吗？
+
+
+
 ### Spanner提供了哪些ORM的支持？
 
 1. Java: Hibernate, Spring Data; 同时，MyBatis,MyBatis-plus也测试过是可以支持的
