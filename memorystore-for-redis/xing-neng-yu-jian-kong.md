@@ -10,4 +10,10 @@
 
 ### 如何理解MemoryStore for Redis的内存使用情况？
 
-举个例子来解释，当你在Console创建一个16GB的Instance的时候，你创建的Redis的实例的maxmemory size就是16GB，而运行这个Redis的实例的计算节点的内存是21.52GB。可以发现，你创建一个16GB的实例，
+举个例子来解释，当你在Console创建一个16GB的Instance的时候，你创建的Redis的实例的maxmemory size就是16GB，而运行这个Redis的实例的计算节点的内存是21.52GB。可以发现，你创建一个16GB的实例，MemoryStore提供了一个有21.52GB内存的计算节点，其中的75%，也就是16GB是Redis最大的使用内存。
+
+在这个16GB的最大使用内存中，如果有主从复制，其中的10%，也就是1.6GB是用于主从复制的日志的缓存的。另外，如果是使用了RDB，也需要考虑做RDB的时候，如果有较多的修改操作，需要额外的内存用于copy-on-write。这些是内存使用情况的基本考虑。
+
+Redis内存也有出现碎片的情形，造成看上去内存使用率不高，但Redis的操作异常，这个时候需要打开参数[activedefrag](https://cloud.google.com/memorystore/docs/redis/memory-management-best-practices#memory\_fragmentation)。简单的做法，就是在MemoryStore Console上打开这个参数。
+
+我在监控
