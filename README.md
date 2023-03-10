@@ -19,4 +19,4 @@ coverY: 0
 
 <mark style="color:yellow;">**这份文档由GCP数据库爱好者整理，旨在快速协助大家解决问题、上手使用GCP的数据库。**</mark>
 
-<mark style="color:yellow;">**更为详细的内容请参考GCP数据库的官方文档。**</mark>
+<mark style="color:yellow;">**更为详细的内容请参考GCP数据库的官方文档!**</mark>
