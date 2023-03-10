@@ -32,6 +32,13 @@ Redis内存也有出现碎片的情形，造成看上去内存使用率不高，
 
 通常建议不要打开，这个对性能影响很大。
 
-###
+### 我想对MemoryStore for Redis做压测，什么工具好用？
 
-### &#x20;
+通常的工具存在的问题是不能够产生足够的负载，所以，[memtier\_benchmark](https://github.com/redislabs/memtier\_benchmark)是一个值得信赖的开源的压测工具。
+
+### 我在做应用开发，需要使用到MemoryStore，有什么建议吗？
+
+* 尽量使用最新版本的开发语言的客户端驱动
+* 连接池的活跃连接不是越多越好，超过10,000之后，性能会下降30%
+* 尽量不要使用[复杂度高](https://github.com/ZhenningLang/redis-command-complexity-cheatsheet)的操作，有能够替代的低复杂度的操作就尽量替换
+* 代码的重试机制需要多考虑，可以提高应用的高可用性。这里有一篇[文章](https://cloud.google.com/memorystore/docs/redis/exponential-backoff?hl=zh-cn)可以参考\
