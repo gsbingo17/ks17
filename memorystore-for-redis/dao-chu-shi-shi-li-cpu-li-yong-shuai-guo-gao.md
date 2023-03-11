@@ -1,4 +1,4 @@
-# Redis 导出时实例CPU 利用率过高
+# 导出时实例CPU 利用率过高
 
 ### Redis 导出原理：
 
@@ -15,4 +15,4 @@ Memorystore for Redis export 使用 Redis 的 BGSAVE 功能对实例中的数据
 
 ### 解决方式
 
-使用标准版的MemoryStore，并启用RDB快照；快照绝不会来自主节点。快照也实现备份功能。
+使用标准版的MemoryStore，并启用RDB快照；快照不是在主节点做的，而是在从节点做的，所以对主节点没有影响。快照也实现备份功能。

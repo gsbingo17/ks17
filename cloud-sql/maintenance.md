@@ -23,7 +23,7 @@ description: Maintenance
 
 Maintenance具体做的事情分几个部分：发布新的功能，修改bug，对数据库版本打各类补丁。Cloud SQL也提供了[Maintenance的日志](https://cloud.google.com/sql/maintenance-changelog?hl=zh-cn)，供大家查看。
 
-### 维护期间 Cloud SQL 实例连接丢失的时间
+### 维护期间 Cloud SQL 实例连接丢失的时间是在什么范围？
 
 * PostgreSQL - 30 seconds or less
 * MySQL - 60 seconds or less
