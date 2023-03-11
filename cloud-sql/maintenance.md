@@ -19,6 +19,10 @@ description: Maintenance
 
 ![](https://lh6.googleusercontent.com/LGSxteOyEnU-2Kfd5v2pYVw4U5CZ6BatFeHle6Hfd6942vncV-KAgGWK9RVa5y1SiT8oy81wtigPiGlp8kL4oJNRrJjl5gNdKV76dbjjHQzyQb\_-byfFjdHfiS81cK1C7m57eIlAtTRKjjDqwocf\_r4dVhz4PYpq4jONTRSi8YdR-\_5MLxT03JYSmajLPvQTEkz0I\_hXMDskKJMUzxs2Ql9-jj49AF116QFC)
 
+### Maintenance到底做了啥？
+
+Maintenance具体做的事情分几个部分：发布新的功能，修改bug，对数据库版本打各类补丁。Cloud SQL也提供了[Maintenance的日志](https://cloud.google.com/sql/maintenance-changelog?hl=zh-cn)，供大家查看。
+
 ### 维护期间 Cloud SQL 实例连接丢失的时间
 
 * PostgreSQL - 30 seconds or less
