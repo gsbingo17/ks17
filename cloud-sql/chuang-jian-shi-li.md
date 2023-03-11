@@ -6,6 +6,12 @@
 
 创建实例的时候，是通过[Database Flag](https://cloud.google.com/sql/docs/mysql/flags)来指定参数。最简单的办法是，你可以在Console直接配置Database Flag。
 
+### 实例的HA能都聊聊吗？
+
+举个例子，Cloud SQL的实例的HA是跨越2个可用区的，其中数据的HA是通过[Regional persistent disks](https://cloud.google.com/compute/docs/disks#repds)来实现，写入到主节点的数据会通过Regional PD实现同时写入到不同的可用区。所以，如果主节点遇到故障，故障切换到在不同的可用区的备用节点上，这个时候数据在这个可用区也是一致和可用的。
+
+HA版本的实例提供了更好的SLA，99.95%。详细信息可以参看这个[文档](https://cloud.google.com/sql/sla)。
+
 ### 创建实例的IOPS是如何配置？
 
 IOPS的大小是和磁盘的类型和大小相关的；同时，越大的实例类型，IOPS的上限越大。所以，当你需要高的IOPS的时候，请选择尽量大的实例类型以及SSD磁盘和更大的存储容量。最简单的验证办法是，你可以在Console创建实例时直接配置，并直观的看到IOPS的配置情况。
@@ -59,7 +65,7 @@ gcloud sql instances patch INSTANCE_NAME \
 
 ### 修改Cloud SQL数据库实例的子网，怎么做呢？
 
-举个例子说明具体做法，例如在VPC的Private Service Connections有2个子网，如下图：
+现在创建新的实例时，可以指定实例所在的子网了；但如果想修改子网呢。举个例子说明具体做法，例如在VPC的Private Service Connections有2个子网，如下图：
 
 ![](https://lh6.googleusercontent.com/PZiolpmK\_yl7eVilMvRDlQFacIKdedOGxw7cCyWGLPrrhvrHhzlaTOQKyPaqNjmvr3LNS4zPevPPauyobaM-Mp4DA7WLXiNmaM0RNBFbvwEfQUjKTg0bYspvBjYoM8rSROi\_tB2Z8BEWzsKRl6M3V5iualrh-1ySMQVuAp2lVwJZQevJq6RC6AidiHmul3g)
 

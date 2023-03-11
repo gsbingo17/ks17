@@ -58,3 +58,11 @@ jdbc:cloudspanner:/projects/bin-learning-centre/instances/bin-testing/databases/
 {% endcode %}
 
 详细参数配置，可以看看这个[文档](https://github.com/googleapis/java-spanner-jdbc)。
+
+### 我想有一个图形化的工具可以访问Cloud Spanner，查看数据库的表结构、数据等，有推荐吗？
+
+&#x20;[DBeaver](https://dbeaver.io/)可以试试。
+
+### 我想找一些spanner周边的开发、测试、demo等工具类的软件，在哪里有呀？
+
+Spanner有很多open source的软件，目前在[Github](https://github.com/orgs/cloudspannerecosystem/repositories)上。
