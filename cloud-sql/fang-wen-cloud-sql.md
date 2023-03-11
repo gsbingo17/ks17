@@ -26,7 +26,7 @@ description: 通过混合网络访问Cloud SQL, MemoryStore或FilestoreSQL
 
 
 
-    <figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
     b. 您可以选择现有的 IP 范围或创建一个不重叠的新 IP 范围，或选择自动分配的 IP 范围
 
