@@ -33,6 +33,7 @@
     * [PostgreSQL](shu-ju-ku-qian-yi/tong-gou-shu-ju-ku/postgresql.md)
     * [SQL Server](shu-ju-ku-qian-yi/tong-gou-shu-ju-ku/sql-server.md)
     * [Redis](shu-ju-ku-qian-yi/tong-gou-shu-ju-ku/redis.md)
+    * [HBase](shu-ju-ku-qian-yi/tong-gou-shu-ju-ku/hbase.md)
   * [异构数据库](shu-ju-ku-qian-yi/yi-gou-shu-ju-ku.md)
 * [Datastream](datastream/README.md)
   * [Source](datastream/source.md)
