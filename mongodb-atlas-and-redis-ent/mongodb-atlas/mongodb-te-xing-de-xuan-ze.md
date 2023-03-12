@@ -1,6 +1,10 @@
-# MongoDB常见售后问题
+---
+description: 内容仅供参考，请以官方文档为准
+---
 
-#### <mark style="color:red;">问题：我的备份显示为灰色，我无法下载它们</mark> <a href="#issue-my-backups-are-greyed-out-and-i-am-unable-to-download-them" id="issue-my-backups-are-greyed-out-and-i-am-unable-to-download-them"></a>
+# 常见售后问题
+
+### 问题：我的备份显示为灰色，我无法下载它们 <a href="#issue-my-backups-are-greyed-out-and-i-am-unable-to-download-them" id="issue-my-backups-are-greyed-out-and-i-am-unable-to-download-them"></a>
 
 1. 询问客户是否为其部署启用了 KMS 加密。如果是这样，他们将无法下载备份。
 2. 如果未启用 KMS，则很可能仍在拍摄他们的快照。他们将不得不等到它完成。
@@ -12,7 +16,7 @@
 2. 他们将不得不等待快照完成。如果快照准备时间很长，则可能存在问题。与客户确认快照的开始时间，并让他们提供给 MongoDB。我们可以检查我们的内部日志记录，看看是什么导致它挂起。
 3. MongoDB 将处理持续的调查和潜在的错误。
 
-#### <mark style="color:red;">问题：我的磁盘空间已满且无法自动缩放</mark> <a href="#issue-my-disk-space-has-filled-up-and-is-not-auto-scaling" id="issue-my-disk-space-has-filled-up-and-is-not-auto-scaling"></a>
+### 问题：我的磁盘空间已满且无法自动缩放 <a href="#issue-my-disk-space-has-filled-up-and-is-not-auto-scaling" id="issue-my-disk-space-has-filled-up-and-is-not-auto-scaling"></a>
 
 他们的磁盘可能填满得太快了。我们可以通过让客户提供“已用磁盘空间”和“可用磁盘空间”指标来验证这一点。如果磁盘空间降至 KB 或更少，自动缩放通常不会启动。
 
@@ -21,7 +25,7 @@
 1. MongoDB 将需要删除缓冲文件并推进计划。升级到 MongoDB。（二级支持）
 2. 指示客户限制写入以避免立即填满磁盘，从而重新进入集群无法扩展的状态。
 
-#### <mark style="color:red;">问题：集群运行缓慢</mark> <a href="#issue-cluster-is-operating-sluggishly" id="issue-cluster-is-operating-sluggishly"></a>
+### 问题：集群运行缓慢 <a href="#issue-cluster-is-operating-sluggishly" id="issue-cluster-is-operating-sluggishly"></a>
 
 让客户提供过去八小时的以下指标；这些将有助于显示工作量的峰值：
 
@@ -36,7 +40,7 @@
 
 他们要么需要限制他们的工作量，要么将他们的集群层级提高到一个新的水平。
 
-#### <mark style="color:red;">问题：如何终止 Atlas 中的操作</mark> <a href="#issue-how-to-kill-operations-in-atlas" id="issue-how-to-kill-operations-in-atlas"></a>
+### 问题：如何终止 Atlas 中的操作 <a href="#issue-how-to-kill-operations-in-atlas" id="issue-how-to-kill-operations-in-atlas"></a>
 
 **在 M0-M5 集群上**
 
@@ -50,7 +54,7 @@
 
 请查看 [命令](https://docs.mongodb.com/manual/reference/method/db.killOp/index.html#sharded-cluster)[的 Sharded Cluster 部分，`db.killOp()`](https://docs.mongodb.com/manual/reference/method/db.killOp/index.html#sharded-cluster) 以获取有关终止分片集群上正在进行的操作的具体步骤的详细信息。
 
-#### <mark style="color:red;">问题：我的实时迁移尝试在验证过程中返回错误“无法到达指定的源”</mark> <a href="#issue-my-live-migrate-attempt-returned-an-error-could-not-reach-specified-source-during-the-validati" id="issue-my-live-migrate-attempt-returned-an-error-could-not-reach-specified-source-during-the-validati"></a>
+### 问题：我的实时迁移尝试在验证过程中返回错误“无法到达指定的源” <a href="#issue-my-live-migrate-attempt-returned-an-error-could-not-reach-specified-source-during-the-validati" id="issue-my-live-migrate-attempt-returned-an-error-could-not-reach-specified-source-during-the-validati"></a>
 
 **解决**
 
@@ -63,7 +67,7 @@
 * [Atlas 的实时迁移文档](https://docs.atlas.mongodb.com/import/live-import/index.html)
 * [实时迁移验证文档故障排除](https://docs.atlas.mongodb.com/import/live-import-troubleshooting/#common-live-migration-validation-errors)
 
-#### <mark style="color:red;">问题：我的实时迁移尝试在验证过程中返回错误“提供的用户名或密码不正确”</mark> <a href="#issue-my-live-migrate-attempt-returned-an-error-username-or-password-provided-is-not-correct-during" id="issue-my-live-migrate-attempt-returned-an-error-username-or-password-provided-is-not-correct-during"></a>
+### 问题：我的实时迁移尝试在验证过程中返回错误“提供的用户名或密码不正确” <a href="#issue-my-live-migrate-attempt-returned-an-error-username-or-password-provided-is-not-correct-during" id="issue-my-live-migrate-attempt-returned-an-error-username-or-password-provided-is-not-correct-during"></a>
 
 **解决**
 
@@ -76,7 +80,7 @@
 * [Atlas 的实时迁移文档](https://docs.atlas.mongodb.com/import/live-import/index.html)
 * [实时迁移验证文档故障排除](https://docs.atlas.mongodb.com/import/live-import-troubleshooting/#common-live-migration-validation-errors)
 
-#### <mark style="color:red;">问题：我的实时迁移尝试在验证过程中返回错误“其他”</mark> <a href="#issue-my-live-migrate-attempt-returned-an-error-other-during-the-validation-process" id="issue-my-live-migrate-attempt-returned-an-error-other-during-the-validation-process"></a>
+### 问题：我的实时迁移尝试在验证过程中返回错误“其他” <a href="#issue-my-live-migrate-attempt-returned-an-error-other-during-the-validation-process" id="issue-my-live-migrate-attempt-returned-an-error-other-during-the-validation-process"></a>
 
 **解决**
 
@@ -87,7 +91,7 @@
 * [Atlas 的实时迁移文档](https://docs.atlas.mongodb.com/import/live-import/index.html)
 * [实时迁移验证文档故障排除](https://docs.atlas.mongodb.com/import/live-import-troubleshooting/#common-live-migration-validation-errors)
 
-#### <mark style="color:red;">问题：客户无法创建 Atlas 搜索索引或仅收到部分结果</mark> <a href="#issue-customer-is-unable-to-create-an-atlas-search-index-or-receiving-only-partial-results-back" id="issue-customer-is-unable-to-create-an-atlas-search-index-or-receiving-only-partial-results-back"></a>
+### 问题：客户无法创建 Atlas 搜索索引或仅收到部分结果 <a href="#issue-customer-is-unable-to-create-an-atlas-search-index-or-receiving-only-partial-results-back" id="issue-customer-is-unable-to-create-an-atlas-search-index-or-receiving-only-partial-results-back"></a>
 
 1. 确认他们尝试使用的集群
    1. Atlas Search 在 M10 和 M20 集群上不可用。
@@ -113,7 +117,7 @@
    6. 最后一次出现问题的日期和时间（包括时区）
    7. 任何可能有助于 MongoDB 支持人员更好地了解环境的屏幕截图或其他信息。
 
-#### <mark style="color:red;">问题：无法通过对等连接与 Google Kubernetes Engine 连接</mark> <a href="#issue-cannot-connect-with-google-kubernetes-engine-over-peering" id="issue-cannot-connect-with-google-kubernetes-engine-over-peering"></a>
+### 问题：无法通过对等连接与 Google Kubernetes Engine 连接 <a href="#issue-cannot-connect-with-google-kubernetes-engine-over-peering" id="issue-cannot-connect-with-google-kubernetes-engine-over-peering"></a>
 
 1. 验证常规对等互连是否适用于他们的云部署。
    1. 如果不是，请参阅下面的[对等故障排除](https://g3doc.corp.google.com/company/gfw/support/cloud/products/mongo-db-atlas/index.md?cl=head#peering-troubleshooting) 部分。
@@ -125,7 +129,7 @@
 
 ![GKE Pod 白名单](https://g3doc.corp.google.com/company/gfw/support/cloud/products/mongo-db-atlas/gke-pod-whitelist.png)
 
-#### <mark style="color:red;">问题：无法通过对等网络连接</mark> <a href="#peering-troubleshooting" id="peering-troubleshooting"></a>
+### 问题：无法通过对等网络连接 <a href="#peering-troubleshooting" id="peering-troubleshooting"></a>
 
 **解决**
 
@@ -157,19 +161,19 @@
          2. 如果列入白名单，请检查对等配置。
          3. 如果不是，请将它们列入白名单并通过步骤 2 进行测试。
 
-#### <mark style="color:red;">问题：关于数据传输成本的问题</mark> <a href="#issue-questions-regarding-data-transfer-costs" id="issue-questions-regarding-data-transfer-costs"></a>
+### 问题：关于数据传输成本的问题 <a href="#issue-questions-regarding-data-transfer-costs" id="issue-questions-regarding-data-transfer-costs"></a>
 
 请客户参阅 [计费文档的数据传输部分](https://docs.atlas.mongodb.com/billing/#data-transfer)。
 
 [有关其他信息，请参阅有关计费的](https://docs.atlas.mongodb.com/billing/#billing)MongoDB Atlas 文档 。他们还可以使用[Atlas 定价工具](https://www.mongodb.com/cloud/atlas/pricing)来估算他们希望用于其用例的特定 Atlas 部署的成本。
 
-#### <mark style="color:red;">问题：集群反复触发初始同步，尤其是在大量写入活动或客户收到复制 Oplog 警报之后</mark> <a href="#issue-cluster-repeatedly-triggers-an-initial-sync-particularly-after-periods-of-heavy-write-activity" id="issue-cluster-repeatedly-triggers-an-initial-sync-particularly-after-periods-of-heavy-write-activity"></a>
+### 问题：集群反复触发初始同步，尤其是在大量写入活动或客户收到复制 Oplog 警报之后 <a href="#issue-cluster-repeatedly-triggers-an-initial-sync-particularly-after-periods-of-heavy-write-activity" id="issue-cluster-repeatedly-triggers-an-initial-sync-particularly-after-periods-of-heavy-write-activity"></a>
 
 `PRIMARY`如果在副本集的节点上进行大量写入操作，并且`SECONDARY`节点没有足够的时间重放包含在 中的所有操作 [`oplog`](https://docs.mongodb.com/manual/core/replica-set-oplog/index.html)，这通常会导致“掉落`oplog`”，这需要 [初始同步](https://docs.mongodb.com/manual/core/replica-set-sync/index.html#initial-sync) 为了恢复并确保数据在所有节点上是一致的。
 
 [Alert Resolutions > Replication Oplog Alerts 文档](https://docs.atlas.mongodb.com/reference/alert-resolutions/replication-oplog/)中概述了更多信息和可能的缓解步骤 。
 
-#### <mark style="color:red;">问题：客户想要查看其集群的 MongoDB 日志</mark> <a href="#issue-customer-would-like-to-review-their-clusters-mongodb-logs" id="issue-customer-would-like-to-review-their-clusters-mongodb-logs"></a>
+### 问题：客户想要查看其集群的 MongoDB 日志 <a href="#issue-customer-would-like-to-review-their-clusters-mongodb-logs" id="issue-customer-would-like-to-review-their-clusters-mongodb-logs"></a>
 
 如果客户希望查看集群的 MongoDB 日志，他们可以使用以下步骤进行：
 
@@ -178,7 +182,7 @@
 3. 在下载日志模式中，根据需要更新选择服务器、开始时间和结束时间字段。
 4. 单击下载日志按钮。
 
-#### <mark style="color:red;">问题：客户寻求有关查询定位警报的指导或帮助审查和调整他们的工作负载</mark> <a href="#issue-customer-seeking-guidance-on-a-query-targeting-alert-or-help-with-reviewing-and-tuning-their-w" id="issue-customer-seeking-guidance-on-a-query-targeting-alert-or-help-with-reviewing-and-tuning-their-w"></a>
+### 问题：客户寻求有关查询定位警报的指导或帮助审查和调整他们的工作负载 <a href="#issue-customer-seeking-guidance-on-a-query-targeting-alert-or-help-with-reviewing-and-tuning-their-w" id="issue-customer-seeking-guidance-on-a-query-targeting-alert-or-help-with-reviewing-and-tuning-their-w"></a>
 
 要了解如何生成查询定位警报，我们建议查看 [警报解决方案 > 查询定位文档](https://docs.atlas.mongodb.com/reference/alert-resolutions/query-targeting/index.html)。
 
@@ -192,7 +196,7 @@
 
 如果客户要求对所确定的查询和索引的调优和性能提供更具体的指导，请让他们直接联系 MongoDB 支持。
 
-#### <mark style="color:red;">问题：客户请求帮助修改他们的备份配置</mark> <a href="#issue-customer-requests-help-modifying-their-backup-configuration" id="issue-customer-requests-help-modifying-their-backup-configuration"></a>
+### 问题：客户请求帮助修改他们的备份配置 <a href="#issue-customer-requests-help-modifying-their-backup-configuration" id="issue-customer-requests-help-modifying-their-backup-configuration"></a>
 
 重要提示：请向客户指出，禁用备份会导致 Atlas 立即删除集群的所有备份快照。 有关详细信息，请参阅 [完全托管备份服务文档。](https://docs.atlas.mongodb.com/backup-cluster/)
 
