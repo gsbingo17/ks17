@@ -31,3 +31,5 @@ gcloud logging read projects/yourproject/logs/cloudsql.googleapis.com%2Fmysql-sl
 其实内存的原理就是尽可能的分配出去，所以不用过于担忧；只要数据库负载没有急剧增长，就不会出现内存溢出的情况。
 
 当然，如果数据库负载主要以写入为主，在MySQL数据库中，可以适当降低innodb\_buffer\_pool\_size来回收不需要的读的缓存，降低数据库内存使用率。关于MySQL内存使用，可以看看这篇[文章](https://cloud.google.com/mysql/memory-usage?hl=zh-cn)。
+
+### Query Insights是干嘛的？
