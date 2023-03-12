@@ -21,7 +21,22 @@ Spanner提供了两大类的读和写的客户端接口：
 
 ### Spanner的事务机制有什么特点，写代码的时候有什么需要注意的吗？
 
+大家写代码都用过事务，各种开发语言的客户端都提供了事务相关的SDK，在基于Spanner的写代码时，主要都是一样的，这里主要聊聊不同的地方：
 
+* Spanner的事务是外部一致性，说起来高级，可以通俗解释为，Spanner的事务是基于TrueTime发生，事务发生的时间和先后顺序是和外部真实世界的时间和先后顺序是完全一样。Spanner事务的时间和你的手表/手机的时间的时间是一样的，甚至更准确。TrueTime是基于原子钟/GPS授时实现的高精度的时间。
+* Spanner主要提供了2种事务：读写事务和只读事务。
+* 读写事务使用悲观锁和Wound Wait（老事务优先，而且直接停止新事务），所以，增加了Retry机制，让事务如果被“Wound Wait”之后，能够继续执行。
+* 只读事务是没有锁的，已经使用的MVCC。所以，如果是读操作，请使用只读事务，减少锁冲突，提供性能。
+* Retry机制是Spanner的应用开发比较特别，可以自定义超时和重试等机制。详细内容可以看看这个[文档](https://cloud.google.com/spanner/docs/custom-timeout-and-retry?hl=zh-cn)。
+* Spanner的表支持提交时间戳，配合客户端驱动可以自动记录事务相关的时间，例如某条记录最后的修改时间等。例如创建表的时候，加上allow\_commit\_timestamp=true)
+
+```
+CREATE TABLE Performances (
+    ...
+    LastUpdateTime  TIMESTAMP NOT NULL OPTIONS (allow_commit_timestamp=true)
+    ...
+) PRIMARY KEY (...);
+```
 
 ### Spanner提供了哪些ORM的支持？
 
