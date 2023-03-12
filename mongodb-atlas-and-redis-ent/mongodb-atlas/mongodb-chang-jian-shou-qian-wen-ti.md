@@ -2,9 +2,9 @@
 description: 内容仅供参考，请以官方文档为准
 ---
 
-# MongoDB常见售前问题
+# 常见售前问题
 
-<mark style="color:red;">为什么选择 MongoDB Atlas 而不是 MongoDB Cloud Manager？</mark>
+### <mark style="color:red;">为什么选择 MongoDB Atlas 而不是 MongoDB Cloud Manager？</mark>
 
 Atlas 提供托管和简化的体验。 Atlas 用户可以访问精选的配置和基础设施选项。可用的 Atlas 配置和基础设施选项可能无法提供某些用户所需的灵活性。例如，Atlas 需要 TLS 来实现集群连接，并且没有提供禁用 TLS 的选项。 Atlas 适合希望管理更少移动部件的用户，使开发人员和数据库管理员能够提高工作效率。
 

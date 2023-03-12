@@ -41,7 +41,7 @@
 * [MongoDB Atlas and Redis Ent](mongodb-atlas-and-redis-ent/README.md)
   * [MongoDB Atlas](mongodb-atlas-and-redis-ent/mongodb-atlas/README.md)
     * [与MongoDB社区版区别](mongodb-atlas-and-redis-ent/mongodb-atlas/yu-mongodb-she-qu-ban-qu-bie.md)
-    * [常见售前问题](mongodb-atlas-and-redis-ent/mongodb-atlas/chang-jian-shou-qian-wen-ti.md)
+    * [常见售前问题](mongodb-atlas-and-redis-ent/mongodb-atlas/mongodb-chang-jian-shou-qian-wen-ti.md)
     * [订阅模式](mongodb-atlas-and-redis-ent/mongodb-atlas/mongodb-atalas-ding-yue-mo-shi.md)
     * [如何迁移到MongoDB Atlas](mongodb-atlas-and-redis-ent/mongodb-atlas/ru-he-qian-yi-dao-mongodb-atlas.md)
     * [MongoDB与BigQuery的同步](mongodb-atlas-and-redis-ent/mongodb-atlas/mongodb-yu-bigquery-de-tong-bu.md)
