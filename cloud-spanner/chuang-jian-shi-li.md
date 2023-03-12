@@ -17,3 +17,16 @@
 ### Spanner提供定制化的配置吗？
 
 Spanner部分提供了定制化的配置，可以在现有的配置下，增加read replica，提升在就近stale read的性能。例如，你可以创建一个跨香港和新加坡的配置，香港的node可读可写，新加坡的node是一个读的replica，这样子的配置提升了新加坡的stale read的性能。你可以直接在Console上创建，详细的信息可以参考这个[文档](https://cloud.google.com/blog/products/databases/introducing-spanner-configurable-read-only-replicas)。
+
+### Spanner有啥成本低的环境可以用于测试和开发吗？
+
+当然有的！
+
+* 提供90天的Free Trial
+* 有最小的100 processing units的instance可以使用，相当于1/10个node的配置，费用一个月大概几十美元。用好的话，还可以直接向上升级配置。
+* 有在笔记本电脑就可以使用的[Spanner模拟器](https://cloud.google.com/spanner/docs/emulator?hl=zh-cn)，是一个基于容器镜像。
+
+### GoogleSQL和PostgreSQL到底选啥？
+
+创建完实例，下一步创建数据库。创建数据库会让你选择是用GoogleSQL还是PostgreSQL方言的数据库。缺省我们都选择GoogleSQL方言的数据库；如果你是从PostgreSQL数据库的开发转过来的，例如，你想直接使用PostgreSQL的DDL/DML，例如直接用PG的DDL来建表建索引，那你就选择PostgreSQL方言的数据库。现在Spanner对PostgreSQL的兼容支持更好一些，除了有PostgreSQL方言支持，还有专门兼容PostgreSQL的Spanner的客户端驱动。
+
