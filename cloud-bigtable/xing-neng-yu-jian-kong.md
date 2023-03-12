@@ -27,7 +27,7 @@ cbt createtable [TABLE_NAME] splits=[SPLITS]
 
 ### Bigtable提供的读写延时是什么水平？
 
-Single row的读和写的操作延时小于10ms。YCSB的工作负载测试的结果通常是P99<10ms；在客户的场景下，这个取决于具体的负载和代码质量，但至少是P50<10ms。
+Single row的读和写的操作延时小于10ms。YCSB的工作负载测试的结果通常是P99<10ms；在客户的场景下，这个取决于具体的负载和代码质量，但**至少**是P50<10ms。
 
 ### 对性能测试有什么通常的建议吗？
 

@@ -44,7 +44,7 @@ description: 通过混合网络访问Cloud SQL, MemoryStore或FilestoreSQL
 3. 对于Filestore，远程客户端IP不能在172.17.0.0/16范围内；
 4. 如果 VPN 网关和 Cloud Router 与与云数据库 VPC 对等的 Customer VPC 不在同一区域，则需要在 VPC 配置中的“动态路由模式”下选择“全局”。
 
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## 示例环境信息 <a href="#_n99xbqjxchsd" id="_n99xbqjxchsd"></a>
 
