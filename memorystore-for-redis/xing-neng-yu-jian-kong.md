@@ -6,7 +6,7 @@
 
 所以，目前MemoryStore for Redis提供了CPU Seconds来监控CPU的资源使用情况。当观察到CPU Seconds接近于下表的I/O Threads时，可以认为CPU遇到性能瓶颈。
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (17).png>)
 
 ### 如何理解MemoryStore for Redis的内存使用情况？
 

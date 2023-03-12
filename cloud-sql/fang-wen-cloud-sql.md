@@ -44,7 +44,7 @@ description: 通过混合网络访问Cloud SQL, MemoryStore或FilestoreSQL
 3. 对于Filestore，远程客户端IP不能在172.17.0.0/16范围内；
 4. 如果 VPN 网关和 Cloud Router 与与云数据库 VPC 对等的 Customer VPC 不在同一区域，则需要在 VPC 配置中的“动态路由模式”下选择“全局”。
 
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 ## 示例环境信息 <a href="#_n99xbqjxchsd" id="_n99xbqjxchsd"></a>
 
@@ -71,7 +71,7 @@ Cloud VPN网关IP：34.134.21.159
 1. 在远程网络和 GCP VPC 网络之间建立 VPN 或 Interconnect 连接，请参阅[Cloud VPN](https://cloud.google.com/network-connectivity/docs/vpn/how-to)和[Cloud Interconnect ](https://cloud.google.com/network-connectivity/docs/interconnect/how-to#managing-dedicated-interconnect)。支持 HA VPN 和 Classic VPN；
 2. 在客户 VPC 与 Cloud 数据库或 Filestore 底层 VPC 之间的相应网络对等中启用“导出自定义路由”。例如，filestore-peer-xxxxxxx 是 Customer VPC 和 VPC 下的 Filestore 实例之间的默认网络对等；
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
 
@@ -95,7 +95,7 @@ Cloud VPN网关IP：34.134.21.159
 
     a. 将 Cloud 数据库或 Filestore IP 范围添加到 Cloud Router 配置中的自定义 IP 范围
 
-<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;       b. 将 Cloud 数据库或 Filestore IP 范围添加到 BGP 会话配置中的自定义范围
 
@@ -117,7 +117,7 @@ Cloud VPN网关IP：34.134.21.159
 
 6. 确认客户 VPC 路由表中存在远程网络 IP 范围
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
 
