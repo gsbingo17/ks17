@@ -30,3 +30,8 @@ Spanner部分提供了定制化的配置，可以在现有的配置下，增加r
 
 创建完实例，下一步创建数据库。创建数据库会让你选择是用GoogleSQL还是PostgreSQL方言的数据库。缺省我们都选择GoogleSQL方言的数据库；如果你是从PostgreSQL数据库的开发转过来的，例如，你想直接使用PostgreSQL的DDL/DML，例如直接用PG的DDL来建表建索引，那你就选择PostgreSQL方言的数据库。现在Spanner对PostgreSQL的兼容支持更好一些，除了有PostgreSQL方言支持，还有专门兼容PostgreSQL的Spanner的客户端驱动。
 
+### 怎么看Spanner和MySQL的兼容的情况？
+
+Spanner现在是没有兼容MySQL的，举个通俗的例子，已经基于MySQL写的应用，不能直接切换数据库的指向就切换到Spanner上。但由于Spanner也提供标准的SQL和事务，支持大多数的ORM组件，也某种程度兼容了MySQL，还是前面的这个例子，假设这个基于MySQL写的应用是用MyBatis写的，你可以通过一些开源工具软件，例如[Harbourbridge](https://github.com/cloudspannerecosystem/harbourbridge)，将MySQL里面的库表结构和数据自动转化和迁移到Spanner，这样子基本完成数据库的改造和迁移；然后，应用代码切换到Spanner的JDBC的驱动，生成新的MyBatis Mapper，检查正常后，就基本完成了应用的改造了。所以，解决兼容性的问题也可以很容易。
+
+当然，目前有一些MySQL有的特性，例如自增ID和存储过程，这些在Spanner里面是没有，要解决这些差异，需要更多的投入。例如自增ID可以用UUID代替，很多ORM内置了UUID生成器。
