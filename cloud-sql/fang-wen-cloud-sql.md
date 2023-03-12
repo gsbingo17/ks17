@@ -95,7 +95,7 @@ Cloud VPN网关IP：34.134.21.159
 
     a. 将 Cloud 数据库或 Filestore IP 范围添加到 Cloud Router 配置中的自定义 IP 范围
 
-<figure><img src="../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;       b. 将 Cloud 数据库或 Filestore IP 范围添加到 BGP 会话配置中的自定义范围
 
@@ -117,7 +117,7 @@ Cloud VPN网关IP：34.134.21.159
 
 6. 确认客户 VPC 路由表中存在远程网络 IP 范围
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
 
