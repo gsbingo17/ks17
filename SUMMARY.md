@@ -40,6 +40,7 @@
   * [Destination](datastream/destination.md)
 * [MongoDB Atlas and Redis Ent](mongodb-atlas-and-redis-ent/README.md)
   * [MongoDB Atlas](mongodb-atlas-and-redis-ent/mongodb-atlas/README.md)
+    * [MongoDB Altas与MongoDB社区版区别](mongodb-atlas-and-redis-ent/mongodb-atlas/mongodb-altas-yu-mongodb-she-qu-ban-qu-bie.md)
     * [MongoDB常见售前问题](mongodb-atlas-and-redis-ent/mongodb-atlas/mongodb-chang-jian-shou-qian-wen-ti.md)
     * [MongoDB Atalas订阅模式](mongodb-atlas-and-redis-ent/mongodb-atlas/mongodb-atalas-ding-yue-mo-shi.md)
     * [如何迁移到MongoDB Atlas](mongodb-atlas-and-redis-ent/mongodb-atlas/ru-he-qian-yi-dao-mongodb-atlas.md)

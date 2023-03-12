@@ -10,7 +10,7 @@ description: 通过混合网络访问Cloud SQL, MemoryStore或FilestoreSQL
 
 当您在 GCP 上创建数据库或 nas 实例（Cloud SQL、Filestore 或 MemoryStore）时，通过 VPC Network Peering 在您的 VPC 网络和您的数据库或 Filestore 实例所在的底层 Google Cloud VPC 网络之间实现私有连接。
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 远程（本地或其他云服务）网络与 GCP 客户 VPC 网络之间的 VPN 或互连隧道与数据库或 Filestore 底层 VPC 网络对等，可以提供与远程客户端的连接以访问云数据库或 Filestore 实例。
 
@@ -44,7 +44,7 @@ description: 通过混合网络访问Cloud SQL, MemoryStore或FilestoreSQL
 3. 对于Filestore，远程客户端IP不能在172.17.0.0/16范围内；
 4. 如果 VPN 网关和 Cloud Router 与与云数据库 VPC 对等的 Customer VPC 不在同一区域，则需要在 VPC 配置中的“动态路由模式”下选择“全局”。
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## 示例环境信息 <a href="#_n99xbqjxchsd" id="_n99xbqjxchsd"></a>
 
@@ -117,7 +117,7 @@ Cloud VPN网关IP：34.134.21.159
 
 6. 确认客户 VPC 路由表中存在远程网络 IP 范围
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
 
