@@ -41,4 +41,8 @@ Redis内存也有出现碎片的情形，造成看上去内存使用率不高，
 * 尽量使用最新版本的开发语言的客户端驱动，特别是一些在很老版本的Redis开发的代码，用新版本的Redis，要升级客户端版本
 * 连接池的活跃连接不是越多越好，超过10,000之后，性能会下降30%；同时连接池的配置也就依据不同的客户端驱动版本进行一些Fine tune，找到最优的配置
 * 尽量不要使用[复杂度高](https://github.com/ZhenningLang/redis-command-complexity-cheatsheet)的操作，有能够替代的低复杂度的操作就尽量替换
-* 代码的重试机制需要多考虑，可以提高应用的高可用性。这里有一篇[文章](https://cloud.google.com/memorystore/docs/redis/exponential-backoff?hl=zh-cn)可以参考\
+* 代码的重试机制需要多考虑，可以提高应用的高可用性。这里有一篇[文章](https://cloud.google.com/memorystore/docs/redis/exponential-backoff?hl=zh-cn)可以参考
+
+### 怎么在MemoryStore中参看Redis的slowlog？
+
+方法和Redis是一样的，使用slowlog get来获得。\
