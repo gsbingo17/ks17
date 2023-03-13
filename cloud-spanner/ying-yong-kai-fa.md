@@ -17,7 +17,7 @@ harbourbridge schema-and-data -source=mysql -source-profile="host=localhost,user
 Spanner提供了两大类的读和写的客户端接口：
 
 1. SQL的[Query](https://cloud.google.com/spanner/docs/getting-started/java?hl=zh-cn#query\_data\_using\_sql)和[DML](https://cloud.google.com/spanner/docs/getting-started/java?hl=zh-cn#write-data)的接口，使用的方法和使用其他关系型数据库是一样；同时，也提供了Java JDBC的支持，正因为如此，也兼容常用的Java的ORM开源框架。
-2. Read和Mutation的接口，[Read](https://cloud.google.com/spanner/docs/getting-started/java?hl=zh-cn#read\_data\_using\_the\_read\_api)接口是用于读取数据，[Mutation](https://cloud.google.com/spanner/docs/getting-started/java?hl=zh-cn#write-data-with-mutations)接口是用于写入数据。Read和Mutation的接口是可以更好满足读写低延时的需求。使用这两个接口读写时，就类似于把Spanner当作一个NoSQL在使用。这也是Spanner融合了关系型数据库和NoSQL数据库在具体使用中的表现。
+2. Read和Mutation的接口，[Read](https://cloud.google.com/spanner/docs/getting-started/java?hl=zh-cn#read\_data\_using\_the\_read\_api)接口是用于读取数据，[Mutation](https://cloud.google.com/spanner/docs/getting-started/java?hl=zh-cn#write-data-with-mutations)接口是用于写入数据。Read和Mutation的接口是可以更好满足读写低延时的需求。使用这两个接口读写时，就类似于把Spanner当作一个NoSQL在使用。这也是Spanner融合了关系型数据库和NoSQL数据库在具体使用中的表现。作为分布式数据库，出于性能的考虑是尽量控制交易的大小在一个合理的范围，所以每笔交易最大的Mutations是4万个，通常情况是够用的；如果了解更多信息，请查看这个[文档](https://cloud.google.com/blog/products/databases/cloud-spanner-doubles-the-number-of-updates-per-transaction)。
 
 ### Spanner的事务机制有什么特点，写代码的时候有什么需要注意的吗？
 
