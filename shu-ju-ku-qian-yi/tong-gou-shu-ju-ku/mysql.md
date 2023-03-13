@@ -18,7 +18,7 @@ description: >-
 
 ![](<../../.gitbook/assets/image (36).png>)\
 \
-**PubliceIP環境:** 則須在CloudSQL instance的地方, 找到真正用來連線到 來源資料庫主機 的 PublicIP如下, 將其加入 來源資料庫主機 網路環境中的 Firewall allow ingress 即可\
+**PubliceIP環境:** 為了取得 CloudSQL 真正用來連線到 來源資料庫主機 的 PublicIP, 可到CloudSQL instance的頁面, 如下方截圖的位置取得PublicIP, 將其加入 來源資料庫主機 網路環境 的 Firewall allow ingress 即可\
 ![](<../../.gitbook/assets/image (11).png>)\
 
 
@@ -35,7 +35,13 @@ description: >-
 
 {% code overflow="wrap" %}
 ```
-SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.EVENTS WHERE EVENT_SCHEMA NOT IN ('mysql', 'sys'); SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.ROUTINES WHERE ROUTINE_SCHEMA NOT IN ('mysql', 'sys'); SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.TRIGGERS WHERE TRIGGER_SCHEMA NOT IN ('mysql', 'sys'); SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.VIEWS WHERE TABLE_SCHEMA NOT IN ('mysql', 'sys');
+SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.EVENTS WHERE EVENT_SCHEMA NOT IN ('mysql', 'sys'); 
+
+SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.ROUTINES WHERE ROUTINE_SCHEMA NOT IN ('mysql', 'sys'); 
+
+SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.TRIGGERS WHERE TRIGGER_SCHEMA NOT IN ('mysql', 'sys'); 
+
+SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.VIEWS WHERE TABLE_SCHEMA NOT IN ('mysql', 'sys');
 ```
 {% endcode %}
 
@@ -44,10 +50,10 @@ SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.EVENTS WHERE EVENT_SCHEMA NOT IN
 
 
 ![](<../../.gitbook/assets/image (16) (2).png>)\
-**Definer is not supported. Definer user XXX@% does not exist. Please create the user on the replica.**\
-****若出現的訊息為Definer user XXX@% does not exist,代表這些View,Trigger等 已經改成特定MySQLUser XXX的Definer,但是這個MySQLUser XXX 尚未在CloudSQL MySQL存在
+**Definer is not supported. Definer user MySQLXXX@% does not exist. Please create the user on the replica.**\
+****若出現的訊息為Definer user MySQLXXX@% does not exist,代表這些View,Trigger等 已經改成特定MySQLUser 的Definer,但是這個MySQLUser 尚未在CloudSQL MySQL存在
 
-解法為 將MySQLUser XXX 建立到這個DMS新建立的CloudSQL MySQL即可\
+解法為 將這個MySQLUser 建立到這個DMS新建立的CloudSQL MySQL之後, 再啟動DMS即可\
 ![](<../../.gitbook/assets/image (3).png>)\
 \
 
