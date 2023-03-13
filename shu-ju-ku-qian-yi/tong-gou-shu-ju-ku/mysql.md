@@ -29,7 +29,7 @@
 `SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.EVENTS WHERE EVENT_SCHEMA NOT IN ('mysql', 'sys'); SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.ROUTINES WHERE ROUTINE_SCHEMA NOT IN ('mysql', 'sys'); SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.TRIGGERS WHERE TRIGGER_SCHEMA NOT IN ('mysql', 'sys'); SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.VIEWS WHERE TABLE_SCHEMA NOT IN ('mysql', 'sys');`\
 並把這些View,Trigger等 改建立為 非root帳號 的DEFINER即可
 
-![](<../../.gitbook/assets/image (16).png>)\
+![](<../../.gitbook/assets/image (16) (2).png>)\
 **Definer is not supported. Definer user XXX@% does not exist. Please create the user on the replica.**\
 ****若出現的訊息為Definer user XXX@% does not exist,代表這些View,Trigger等 已經改成特定MySQLUser XXX的Definer,但是這個MySQLUser XXX 尚未在CloudSQL MySQL存在
 
