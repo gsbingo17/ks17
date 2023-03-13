@@ -7,6 +7,24 @@ description: >-
 
 # MySQL
 
+### 哪些MySQL数据库可以用DMS迁移？
+
+* RDS 5.6，5.7，8.0
+* 地端OP的MySQL 5.6，5.7，8.0
+* Cloud SQL 5.6，5.7，8.0
+* Aurora 5.6，5.7，8.0
+* DMS利用MySQL Replication实现的数据库迁移，所以主要云商的RDS MySQL基本可以迁移
+
+### 源端数据库有什么基本要求吗？
+
+* Row-based binlog 要打开，并且保留足够长的时间能覆盖到数据库迁移的时间，通常可以设置7日
+* 数据库的权限要够
+* 网络要能够打通
+
+### **Timeout waiting for no write traffic on source**
+
+DMS在数据库迁移的第一步使用 mysqldump --single-tranaction进行导出，并保证数据一致性；single-transation是要求数据库实例“停写”很短的时间，然后开始这个导出操作。有些数据库实例非常繁忙，不能满足这个“停写”很短的时间，所以，通常的建议，是在源库建立一个启用binlog的副本，然后从这个副本作为源数据库配置DMS数据库迁移任务；在启动任务时，将源数据库主从复制停止一段时间；任务启动完成后，恢复源数据库主从复制。
+
 ### **Failure connecting to the source database**
 
 若是在 Test migration Job 過程, 發現Error: **Failure connecting to the source database** \
@@ -19,10 +37,9 @@ description: >-
 ![](<../../.gitbook/assets/image (36).png>)\
 \
 **PubliceIP環境:** 為了取得 CloudSQL 真正用來連線到 來源資料庫主機 的 PublicIP, 可到CloudSQL instance的頁面, 如下方截圖的位置取得PublicIP, 將其加入 來源資料庫主機 網路環境 的 Firewall allow ingress 即可\
-![](<../../.gitbook/assets/image (11).png>)\
+![](<../../.gitbook/assets/image (11).png>)
 
-
-## Definer is not supported
+### Definer is not supported
 
 若是在 Test migration Job 過程, 發現開頭為 Definer is not supported... 的Error\
 \
@@ -47,18 +64,16 @@ SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.VIEWS WHERE TABLE_SCHEMA NOT IN 
 
 並把這些View,Trigger等 改建立為 非root帳號 的DEFINER即可
 
+![](<../../.gitbook/assets/image (16) (2).png>)
 
+### Definer user MySQLXXX@% does not exist
 
-![](<../../.gitbook/assets/image (16) (2).png>)\
-**Definer is not supported. Definer user MySQLXXX@% does not exist. Please create the user on the replica.**\
-****若出現的訊息為Definer user MySQLXXX@% does not exist,代表這些View,Trigger等 已經改成特定MySQLUser 的Definer,但是這個MySQLUser 尚未在CloudSQL MySQL存在
+若出現的訊息為Definer is not supported，Definer user MySQLXXX@% does not exist,代表這些View,Trigger等 已經改成特定MySQLUser 的Definer,但是這個MySQLUser 尚未在CloudSQL MySQL存在。
 
 解法為 將這個MySQLUser 建立到這個DMS新建立的CloudSQL MySQL之後, 再啟動DMS即可\
-![](<../../.gitbook/assets/image (3).png>)\
-\
+![](<../../.gitbook/assets/image (3).png>)
 
-
-## Lost Connection to MySQL during Query
+### Lost Connection to MySQL during Query
 
 若是在migration已經開始,但卻在跑一段時間後出現Error: \
 Lost Connection to MySQL during Query \
@@ -71,4 +86,3 @@ Lost Connection to MySQL during Query \
 net\_read\_timeout=3600\
 net\_write\_timeout=3600\
 max\_allowed\_packet=1G
-
