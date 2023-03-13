@@ -6,6 +6,10 @@
 
 ## [Maintenance](maintenance.md)
 
+## [访问Cloud SQL](fang-wen-cloud-sql.md)
+
+## [下载Cloud SQL Binlog文件](xia-zai-cloud-sql-binlog-wen-jian.md)
+
 ## [MySQL主从复制优化](broken-reference)
 
-## [监控](xing-neng-yu-jian-kong.md)
+## [性能与监控](xing-neng-yu-jian-kong.md)
