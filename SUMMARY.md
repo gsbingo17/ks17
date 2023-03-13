@@ -9,7 +9,6 @@
   * [MySQL主从复制优化](cloud-sql/mysql-zhu-cong-fu-zhi-you-hua.md)
   * [性能与监控](cloud-sql/xing-neng-yu-jian-kong.md)
   * [创建实例](cloud-sql/chuang-jian-shi-li.md)
-  * [MySQL实例变更的影响](cloud-sql/mysql-shi-li-bian-geng-de-ying-xiang.md)
 * [MemoryStore for Redis](memorystore-for-redis/README.md)
   * [创建实例](memorystore-for-redis/chuang-jian-shi-li.md)
   * [性能与监控](memorystore-for-redis/xing-neng-yu-jian-kong.md)
