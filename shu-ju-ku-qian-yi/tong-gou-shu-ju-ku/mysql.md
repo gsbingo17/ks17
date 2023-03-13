@@ -17,8 +17,7 @@
 
 ## Definer is not supported
 
-若是在 Test migration Job 過程, 發現開頭為 Definer is not supported... 的Error
-
+若是在 Test migration Job 過程, 發現開頭為 Definer is not supported... 的Error\
 \
 ![](<../../.gitbook/assets/image (12).png>)\
 **Definer is not supported. Definer user root@localhost not supported. Please update host to '%'.**\
@@ -27,17 +26,15 @@
 
 解法為使用 [文件](https://cloud.google.com/database-migration/docs/mysql/mysql-definer) 中的指令 找出有使用哪些DEFINER
 
-\
-
-
 {% code overflow="wrap" %}
 ```
 SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.EVENTS WHERE EVENT_SCHEMA NOT IN ('mysql', 'sys'); SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.ROUTINES WHERE ROUTINE_SCHEMA NOT IN ('mysql', 'sys'); SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.TRIGGERS WHERE TRIGGER_SCHEMA NOT IN ('mysql', 'sys'); SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.VIEWS WHERE TABLE_SCHEMA NOT IN ('mysql', 'sys');
 ```
 {% endcode %}
 
-`SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.EVENTS WHERE EVENT_SCHEMA NOT IN ('mysql', 'sys'); SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.ROUTINES WHERE ROUTINE_SCHEMA NOT IN ('mysql', 'sys'); SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.TRIGGERS WHERE TRIGGER_SCHEMA NOT IN ('mysql', 'sys'); SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.VIEWS WHERE TABLE_SCHEMA NOT IN ('mysql', 'sys');`\
 並把這些View,Trigger等 改建立為 非root帳號 的DEFINER即可
+
+
 
 ![](<../../.gitbook/assets/image (16) (2).png>)\
 **Definer is not supported. Definer user XXX@% does not exist. Please create the user on the replica.**\
