@@ -49,7 +49,7 @@ SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.EVENTS WHERE EVENT_SCHEMA NOT IN
 
 若是在migration已經開始,但卻在跑一段時間後出現Error: \
 Lost Connection to MySQL during Query \
-![](<../../.gitbook/assets/image (2) (1).png>)
+![](<../../.gitbook/assets/image (2) (3).png>)
 
 這樣代表來源MySQL資料庫有些size較大的table, 持續做Fulldump的過程較久,導致被MySQL判定太久沒有回應為超時timeout
 
