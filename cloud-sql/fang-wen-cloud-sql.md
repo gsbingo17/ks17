@@ -117,7 +117,7 @@ Cloud VPN网关IP：34.134.21.159
 
 6. 确认客户 VPC 路由表中存在远程网络 IP 范围
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
 
