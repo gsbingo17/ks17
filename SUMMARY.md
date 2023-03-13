@@ -18,6 +18,7 @@
 * [AlloyDB for PostgreSQL](alloydb-for-postgresql/README.md)
   * [创建实例](alloydb-for-postgresql/chuang-jian-shi-li.md)
   * [性能与监控](alloydb-for-postgresql/xing-neng-yu-jian-kong.md)
+  * [Maintenance](alloydb-for-postgresql/maintenance.md)
   * [Columnar Engine](alloydb-for-postgresql/columnar-engine.md)
 * [Cloud Spanner](cloud-spanner/README.md)
   * [创建实例](cloud-spanner/chuang-jian-shi-li.md)

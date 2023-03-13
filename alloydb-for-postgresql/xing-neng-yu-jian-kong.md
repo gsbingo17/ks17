@@ -14,8 +14,6 @@ AlloyDB 的 IOPs 与存储无关，再加上 AlloyDB 对存储进行自动扩展
 
 与标准 PostgreSQL 相比，这种架构减少了存储的 I/O 量，因为只有 WAL 记录被发送到存储层。同时，由于多层缓存，AlloyDB 提供了更快的读取速度。读取最近写入的内容可以直接从缓存中提取，在未命中缓存的情况下，才从底层存储拉取。
 
+### AlloyDB 在 read pool 节点上是如何分配 query 的？
 
-
-
-
-从最近写入的块中读取通常由缓存提供。当然，在缓存未命中的情况下，读取直接从区域块存储服务。由于这些情况发生在记录更新后足够长的时间，LPS 中的异步后台处理确保 WAL
+使用 round-robin 算法对连向 read pool 的 connections 进行分配。如果是不同的业务需求，可以根据不同的要求创建不同的 read pool。每个 read pool 的节点数，以及 flag，extension 都是独立配置的（所有 read pool 中的总节点数不超过 20）。
