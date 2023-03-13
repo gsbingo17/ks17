@@ -8,6 +8,40 @@ description: 内容仅供参考，请以官方文档为准
 
 Atlas 提供托管和简化的体验。 Atlas 用户可以访问精选的配置和基础设施选项。可用的 Atlas 配置和基础设施选项可能无法提供某些用户所需的灵活性。例如，Atlas 需要 TLS 来实现集群连接，并且没有提供禁用 TLS 的选项。 Atlas 适合希望管理更少移动部件的用户，使开发人员和数据库管理员能够提高工作效率。
 
+
+
+### MongoDB Altas 与社区版的区别？
+
+
+
+<figure><img src="../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
+
+### MongoDB与Firestore的对比？
+
+
+
+<figure><img src="../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+
+### 有哪几种不同的订阅模式？
+
+1. **承诺计费订阅**
+
+如果您的订阅包括一个期限的承诺，您可以在atlas界面上查看您的承诺用量和相关支出及剩余量。进度条可以直观显示出完成承诺的进展程度。
+
+<figure><img src="../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+
+2. **弹性计费订阅**
+
+按照实际使用量来收费
+
+<figure><img src="../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+
+
+
 ### 我可以将现有的 MongoDB 部署引入 MongoDB Atlas 进行管理吗？
 
 否。但是您可以将现有 MongoDB 部署中的数据上传到 MongoDB Atlas。
