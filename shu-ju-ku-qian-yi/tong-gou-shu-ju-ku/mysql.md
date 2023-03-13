@@ -41,7 +41,7 @@ SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.EVENTS WHERE EVENT_SCHEMA NOT IN
 ****若出現的訊息為Definer user XXX@% does not exist,代表這些View,Trigger等 已經改成特定MySQLUser XXX的Definer,但是這個MySQLUser XXX 尚未在CloudSQL MySQL存在
 
 解法為 將MySQLUser XXX 建立到這個DMS新建立的CloudSQL MySQL即可\
-![](../../.gitbook/assets/image.png)\
+![](<../../.gitbook/assets/image (3).png>)\
 \
 
 
@@ -49,7 +49,7 @@ SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.EVENTS WHERE EVENT_SCHEMA NOT IN
 
 若是在migration已經開始,但卻在跑一段時間後出現Error: \
 Lost Connection to MySQL during Query \
-![](<../../.gitbook/assets/image (2) (3).png>)
+![](<../../.gitbook/assets/image (2).png>)
 
 這樣代表來源MySQL資料庫有些size較大的table, 持續做Fulldump的過程較久,導致被MySQL判定太久沒有回應為超時timeout
 

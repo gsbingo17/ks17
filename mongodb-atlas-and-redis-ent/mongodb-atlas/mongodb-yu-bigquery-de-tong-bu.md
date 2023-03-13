@@ -12,7 +12,7 @@ Mongodb到Bigquery之间的数据同步有三种方式：
 
 
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (3).png" alt=""><figcaption></figcaption></figure>
 
 
 
