@@ -41,7 +41,7 @@ SELECT DISTINCT DEFINER FROM INFORMATION_SCHEMA.EVENTS WHERE EVENT_SCHEMA NOT IN
 ****若出現的訊息為Definer user XXX@% does not exist,代表這些View,Trigger等 已經改成特定MySQLUser XXX的Definer,但是這個MySQLUser XXX 尚未在CloudSQL MySQL存在
 
 解法為 將MySQLUser XXX 建立到這個DMS新建立的CloudSQL MySQL即可\
-![](<../../.gitbook/assets/image (1).png>)\
+![](../../.gitbook/assets/image.png)\
 \
 
 
