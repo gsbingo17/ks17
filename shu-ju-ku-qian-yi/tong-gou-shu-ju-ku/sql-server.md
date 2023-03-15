@@ -1,6 +1,19 @@
+---
+description: >-
+  GCP的DMS支援SQLServer為DataSource 計畫在2023-H2推出, 敬請期待. 
+  在目前階段可採用交易式複寫以及BAK完整備份還原的方式進行搬遷
+---
+
 # SQL Server
 
-## 使用 交易式複寫 + 由備份初始化訂閱 的方式 搬遷SQLServer 至 CloudSQL SQLServer
+### 哪些SQLServer数据库可以用交易式複寫遷移？
+
+* 只要來源的SQLServer有支援能當作 發行者(Publisher) 都沒問題
+* 微軟官方提到 [差距兩個版本內](https://learn.microsoft.com/en-us/sql/relational-databases/replication/replication-backward-compatibility?view=sql-server-ver16#replication-matrix) 都可以使用交易式複寫搬遷\
+  支援 SQLServer 2014 2016 2017 搬遷到 CloudSQL 2017\
+  支援 SQLServer 2016 2017 2019 搬遷到 CloudSQL 2019
+
+### 使用 交易式複寫 + 由備份初始化訂閱 的方式 搬遷SQLServer 至 CloudSQL SQLServer
 
 CloudSQL SQLServer 有支援 Microsoft 原生的複寫(replication)功能\
 不論當作 [訂閱者(Subscriber)](https://cloud.google.com/solutions/migrating-data-from-sql-server-to-cloud-sql-for-sql-server) 以及 [發行者(Publisher)](https://cloud.google.com/sql/docs/sqlserver/replication/configure-external-replica) 都沒有問題\
