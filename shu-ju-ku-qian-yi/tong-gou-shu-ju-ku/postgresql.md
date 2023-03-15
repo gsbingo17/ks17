@@ -21,6 +21,6 @@ Step1: pglogical replication setting on Source PostgreSQL
 
 Step2: pglogical replication setting on Dest CloudSQL
 
-Step3: pglogical.create\_subscription on Dest CloudSQL
+Step3: create\_subscription on Dest CloudSQL
 
-Step4: Check status pglogical.show\_subscription\_status
+Step4: Check replication status show\_subscription\_status
