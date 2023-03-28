@@ -9,3 +9,27 @@
 ### 如何管理 AlloyDB 的版本升级?
 
 对于小版本升级 (minor upgrade)，将在维护窗口期间自动升级；大版本升级（major upgrade）由用户自己决定是否升级。
+
+### AlloyDB 的备份可以保留多久？如何自定义修改备份规则？
+
+如果是通过 Console 创建的 AlloyDB，在创建时可以通过勾选 Automate backups 来配置每天一次的自动备份，默认的备份保留时间为 14 天。同时，也可以通过 [gcloud](https://cloud.google.com/sdk/gcloud/reference/alloydb/clusters/update?authuser=1) 命令来对备份配置进行自定义修改。例如：
+
+```text
+gcloud alloydb clusters update CLUSTER_ID \
+    --automated-backup-days-of-week=DAYS_LIST \
+    --automated-backup-start-times=05:00 \
+    --automated-backup-retention-period=1m \
+    --automated-backup-window=90m  \
+    --region=REGION_ID \
+    --project=PROJECT_ID
+```
+
+上边的例子中，DAYS_LIST，可以是一周中的某一个或者几个具体的日子，比如[MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY]
+
+![Screenshot 2023-03-27 at 17.19.48.png](https://github.com/gsbingo17/ks17/blob/main/.gitbook/assets/Screenshot 2023-03-27 at 17.19.48.png)
+
+修改之后，可以再通过 gcloud describe 命令确认修改后的结果
+
+```text
+gcloud alloydb clusters describe test0317 --region <REGION>
+```
