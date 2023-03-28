@@ -26,7 +26,7 @@ gcloud alloydb clusters update CLUSTER_ID \
 
 上边的例子中，DAYS_LIST，可以是一周中的某一个或者几个具体的日子，比如[MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY]
 
-![Screenshot 2023-03-27 at 17.19.48.png](https://github.com/gsbingo17/ks17/blob/main/.gitbook/assets/Screenshot 2023-03-27 at 17.19.48.png)
+![Screenshot 2023-03-27 at 17.19.48.png](https://github.com/gsbingo17/ks17/blob/main/.gitbook/assets/Screenshot%202023-03-27%20at%2017.19.48.png)
 
 修改之后，可以再通过 gcloud describe 命令确认修改后的结果
 
