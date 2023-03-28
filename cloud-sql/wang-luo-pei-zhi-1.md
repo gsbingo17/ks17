@@ -39,3 +39,59 @@ gcloud services vpc-peerings update \
 可以通过编辑 Cloud SQL 数据库，勾选 Google Cloud services authorization 选项，允许 BigQuery 等其他的 Google Cloud 服务访问数据并通过私有 IP 进行查询。支持 Cloud SQL MySQL 以及 Cloud SQL PostgreSQL。
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-03-06 at 18.01.33.png" alt=""><figcaption></figcaption></figure>
+
+### 如何将 CloudSQL 实例启动在指定的 IP range 中？
+
+通过 API 的方式，可以在启动实例的时候，指定 allocatedIpRange 将 CloudSQL的主实例或者副本起在指定的 IP range (subnet) 中。
+
+示例如下：
+
+```text
+{
+  "masterInstanceName": "t1",
+  "project": "test-poc-2023",
+  "databaseVersion": "MYSQL_8_0_28",
+  "name": "t1-ro",
+  "region": "europe-west4",
+  "deletionProtectionEnabled": true,
+  "settings": {
+    "settingsVersion": 0,
+    "userLabels": {
+      "team": "infra",
+      "project": "infra",
+      "app": "infra-test"
+    },
+    "ipConfiguration": {
+      "ipv4Enabled": false,
+      "privateNetwork": "projects/test-poc-2023/global/networks/default",
+      "allocatedIpRange": "cloud-sql-ip-range",
+      "locationPreference": {
+      "zone": "europe-west4-a"
+     }
+     },
+     "databaseFlags": [
+      {
+        "name": "lower_case_table_names",
+        "value": "1"
+      },
+      {
+        "name": "transaction_isolation",
+        "value": "READ-COMMITTED"
+      }
+    ],    
+    "tier": "db-custom-2-4096"
+  }
+}
+
+curl -X POST \
+    -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+    -H "Content-Type: application/json; charset=utf-8" \
+    -d @create_repl_mysql.json \
+    "https://sqladmin.googleapis.com/v1/projects/test-poc-2023/instances"
+```
+
+如果是通过 Console 或者 gcloud 的方式，可以在创建主实例（Primary）的时候进行配置，例如：
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-03-27 at 16.20.10.png" alt=""><figcaption></figcaption></figure>
+
+在上图示例中，我们将数据库实例启动在 VPC ”new1“ 的 subnet ”new1-ip-range“ 中，通过 Allocated IP Range，可以选择允许的某个或者多个特定的子网。该 Primary 实例如果在后续还启动 read replica 的话, 所有的 replica 的网络配置将继承主实例的配置。也就是说，如果主实例起在”new1-ip-range“的子网中，在该 region 下的所有 read replica 也都启动在这个子网中（注意需要在子网中预留足够的 IP 地址）。
