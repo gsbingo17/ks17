@@ -87,11 +87,11 @@ net\_read\_timeout=3600\
 net\_write\_timeout=3600\
 max\_allowed\_packet=1G
 
-### 通过互联网DMS的速度大概在多少
+### 通过互联网DMS的速度大概在多少?
 
 经过实测从北弗吉尼亚的AWS Aurora到美中区域，1.2TB的数据大概36小时实现同步，传输速度大概在34GiB/小时。
 
-### dump阶段出现报错如何处理
+### dump阶段出现报错如何处理?
 
 对于写操作比较繁忙的数据库，dump阶段可能会出现如下报错：
 
