@@ -42,16 +42,7 @@ SET OPTIONS(
 
 在 BigQuery 直接作为 destination 时，如果source端的表没有 primary key，新写入的数据会以 append-on 的形式存在：
 
-| Row | id | name | datastream\_metadata.uuid            | datastream\_metadata.source\_timestamp | datastream\_metadata.is\_deleted |
-| --- | -- | ---- | ------------------------------------ | -------------------------------------- | -------------------------------- |
-| 1   | 1  | aaa  | ba516709-b9b6-476e-8d14-08bf00000000 | 1668495657000                          | false                            |
-| 2   | 2  | bbb  | ba516709-b9b6-476e-8d14-08bf00000001 | 1668495657000                          | false                            |
-| 3   | 3  | c    | ba516709-b9b6-476e-8d14-08bf00000010 | 1668495657000                          | false                            |
-| 4   | 4  | cd   | ba516709-b9b6-476e-8d14-08bf00000011 | 1668495657000                          | false                            |
-| 5   | 5  | cd   | ba516709-b9b6-476e-8d14-08bf00000100 | 1668495657000                          | false                            |
-| 6   | 3  | jz   | 4285ed1c-1323-4416-90b9-032900000000 | 1669181821000                          | false                            |
-| 7   | 5  | cd   | cabe34af-9c13-4dac-93bf-57ad00000000 | 1669185018000                          | true                             |
-| 8   | 6  | jun  | 3fac2b8f-b582-48b8-b0b3-22d900000000 | 1669185121000                          | false                            |
+<table><thead><tr><th width="100">Row</th><th width="100">id</th><th width="100">name</th><th>datastream_metadata.uuid</th><th>datastream_metadata.source_timestamp</th><th>datastream_metadata.is_deleted</th></tr></thead><tbody><tr><td>1</td><td>1</td><td>aaa</td><td>ba516709-b9b6-476e-8d14-08bf00000000</td><td>1668495657000</td><td>false</td></tr><tr><td>2</td><td>2</td><td>bbb</td><td>ba516709-b9b6-476e-8d14-08bf00000001</td><td>1668495657000</td><td>false</td></tr><tr><td>3</td><td>3</td><td>c</td><td>ba516709-b9b6-476e-8d14-08bf00000010</td><td>1668495657000</td><td>false</td></tr><tr><td>4</td><td>4</td><td>cd</td><td>ba516709-b9b6-476e-8d14-08bf00000011</td><td>1668495657000</td><td>false</td></tr><tr><td>5</td><td>5</td><td>cd</td><td>ba516709-b9b6-476e-8d14-08bf00000100</td><td>1668495657000</td><td>false</td></tr><tr><td>6</td><td>3</td><td>jz</td><td>4285ed1c-1323-4416-90b9-032900000000</td><td>1669181821000</td><td>false</td></tr><tr><td>7</td><td>5</td><td>cd</td><td>cabe34af-9c13-4dac-93bf-57ad00000000</td><td>1669185018000</td><td>true</td></tr><tr><td>8</td><td>6</td><td>jun</td><td>3fac2b8f-b582-48b8-b0b3-22d900000000</td><td>1669185121000</td><td>false</td></tr></tbody></table>
 
 如果需要得到 Merge 后的数据，可以手动执行以下语句：
 

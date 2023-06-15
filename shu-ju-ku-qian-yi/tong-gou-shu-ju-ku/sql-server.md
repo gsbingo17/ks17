@@ -26,7 +26,7 @@ CloudSQL SQLServer 有支援 Microsoft 原生的複寫(replication)功能\
 以下說明每個步驟中的關鍵要點:
 
 **Step1: Create Publication Distribution**\
-****在這個階段建立 散發集(Distribution) 以及 發行集(Publication) 選擇什麼資料庫以及什麼Table需要搬遷並加入發行集即可\
+在這個階段建立 散發集(Distribution) 以及 發行集(Publication) 選擇什麼資料庫以及什麼Table需要搬遷並加入發行集即可\
 **重點1:** 這個發行集一定要 勾選/啟用 以備份初始化訂閱 (@allow\_initialize\_from\_backup) \
 **重點2:** Table需要具備Primary Key才可以加入發行集進行交易式複寫.
 

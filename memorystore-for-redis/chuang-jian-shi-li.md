@@ -26,7 +26,7 @@
 
 为了更好利用实例，节约成本，在使用标准版实例时，可以配置一个 read replica。这样，在不增加成本的前提下，既能做高可用，又可以提供读写分离，承担更多的业务流量。
 
-<figure><img src="../.gitbook/assets/Screenshot 2023-03-13 at 15.03.14 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-03-13 at 15.03.14.png" alt=""><figcaption></figcaption></figure>
 
 ### MemoryStore升级配置和升级Redis的大版本可以吗，有啥需要注意的？
 

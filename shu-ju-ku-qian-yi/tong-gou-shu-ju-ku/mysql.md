@@ -86,3 +86,29 @@ Lost Connection to MySQL during Query \
 net\_read\_timeout=3600\
 net\_write\_timeout=3600\
 max\_allowed\_packet=1G
+
+### 通过互联网DMS的速度大概在多少
+
+经过实测从北弗吉尼亚的AWS Aurora到美中区域，1.2TB的数据大概36小时实现同步，传输速度大概在34GiB/小时。
+
+### dump阶段出现报错如何处理
+
+对于写操作比较繁忙的数据库，dump阶段可能会出现如下报错：
+
+![](https://lh6.googleusercontent.com/N4Deo82PkPgGGdWMDT\_a0-5aNTRSFVnco8mYPTse3NxG3Gz9OyzOCw6Slqbc-9mxdE6q-SLDOyXvFUihTIWoWarMROpJ8CIDQnxIYxMyvwlnfKx4Hsc1HHek1GU7yHrIIwaBRCXr6CDmNcL4HOFWVDxDkclyt-yOpaadBVOWq6MtZOekaBv4m\_xeE7PdlaJaJK4HOoYCF4uaJryoYN1CNAUc1Qt0wv6grvaVbw)
+
+如果show process list出现如下报错：
+
+![](https://lh4.googleusercontent.com/PxX5KjQsxvzn3UhdUKjEVelZ7cnKmGlkwpSJsTmLEgMfsKqk67QZhxhIDmYhJHCQUdVVA4y3IT2AyQltXzOh4MaeUAfN9kFN4OvqrvMp6C3zKGhrv-0LGrKJgXs7L63Oe30phjyb37HX1Nzf\_X5hCkTjBQgIL3-YaBOTqxq2mUGDtaLAAmNYOOCcMzUhpm2E7uKPX-mlvuJdh\_w6n1Ps9gl5bQCxHZ8wfC8zBQ)
+
+出现这种错误的原因是当DMS处在dump阶段时，需要在很短的时间内用读锁刷新表来创建快照。 但是如果有高吞吐量的写操作，会因为没有readonly时间窗口而导致dump失败。
+
+解决的方法是：暂停写入操作高的应用程序，等dump的操作完成，快照创建以后，恢复这个应用程序的写入。
+
+### DMS过程中可以有DDL的操作吗？
+
+DMS分为两个阶段，dump同步阶段和CDC阶段。dump阶段时不允许DDL操作修改schema的，但CDC阶段可以允许DDL操作，并且会同步到Destination DB。
+
+![](https://lh5.googleusercontent.com/0txow54JXM4FkZKa2NaWvUmRN31VoAySPf\_AL1NepApyg--PTcMFzszr6-wCFmZArR\_ml3vPHZ35ZQcgt39AtXAKZNhwDkbSZ50UFX0L039N4tP1l4pBwOCkGy0lMdyuOWcVgq2DeMbYb1Uu5tipws\_xHdO52Kf7TWnNdvlbCt6qMtf6Nn9-myif0VaE\_xEmgDeCiWUE5si3JcS4ZY8VunuOVvdjYSs8MQ-8hg)
+
+方案：在dump阶段，暂停DDL操作；从DMS的monitorig里看到进入到CDC阶段时，放开DDL操作。\

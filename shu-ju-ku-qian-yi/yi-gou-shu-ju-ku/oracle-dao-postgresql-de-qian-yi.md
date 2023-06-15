@@ -28,7 +28,7 @@ Oracle DB assessment, GCP使用的是 partner tool **migVisor**\
 
 這個階段會有兩個重要的tool, ora2pg & Ispirer
 
-* **ora2pg** 是相當知名的免費 open source tool, 專注於Oracle to PostgreSQL的 Table schema, View, Trigger, Stored Procedure等等的轉換. 在使用 DMS 的過程就需要客戶使用 ora2pg 來手動進行 Table schema的轉換, 並將轉換後的Table schema 先建立在CloudSQL PostgreSQL.  接著再將 ora2pg.conf 上傳到 DMS 協助判別哪些Table需要搬遷. ora2pg的安裝可參考此 [**文件**](https://docs.google.com/document/d/140YEJkUtwvOT6fFCEdmhgdqA9MX97UURJMUAn\_OHBQE/edit)****
+* **ora2pg** 是相當知名的免費 open source tool, 專注於Oracle to PostgreSQL的 Table schema, View, Trigger, Stored Procedure等等的轉換. 在使用 DMS 的過程就需要客戶使用 ora2pg 來手動進行 Table schema的轉換, 並將轉換後的Table schema 先建立在CloudSQL PostgreSQL.  接著再將 ora2pg.conf 上傳到 DMS 協助判別哪些Table需要搬遷. ora2pg的安裝可參考此 [**文件**](https://docs.google.com/document/d/140YEJkUtwvOT6fFCEdmhgdqA9MX97UURJMUAn\_OHBQE/edit)
 * **Ispirer** 是 partner tool 在 View, Trigger, Stored Procedure的PL/SQL to PL/pgSQL 轉換上特別出色, 若客戶發現ora2pg的轉換效果不好, 便可使用此tool, 此工具是需要付費的.
 
 ### Data Migration

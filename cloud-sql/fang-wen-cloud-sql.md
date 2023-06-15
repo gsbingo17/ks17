@@ -79,7 +79,7 @@ Cloud VPN网关IP：34.134.21.159
 
     ：
 
-    <figure><img src="../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../.gitbook/assets/image (34) (1).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;      b. 将 Cloud 数据库或 Filestore 实例 IP 范围 (10.169.244.200/29) 添加到远程 VPN 设备的路由表中。例如，AWS VPN 连接静态路由
 
@@ -99,7 +99,7 @@ Cloud VPN网关IP：34.134.21.159
 
 &#x20;         c. 在步骤 4.a 和 4.b 之后，应将 Cloud 数据库或 Filestore IP 范围的动态路由通告到远程网络路由表。确认路由存在于远程网络路由表中
 
-<figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
 
 5. 确认网络对等配置下的导出路由中存在远程网络 IP 范围
 
@@ -116,7 +116,7 @@ Cloud VPN网关IP：34.134.21.159
 1. 除非使用 NFS 文件锁定，否则不需要防火墙规则。为 NFS 文件锁定设置防火墙规则请参阅[此](https://cloud.google.com/filestore/docs/configuring-firewall)。
 2. 在“Grant access to all clients on the VPC network”或者在“Restrict access by IP address or range”区域填入客户端源IP，满足以上环境的访问要求
 
-<figure><img src="../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
 
 ### Cloud SQL <a href="#_6i3s9dffhoys" id="_6i3s9dffhoys"></a>
 
